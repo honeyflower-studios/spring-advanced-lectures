@@ -1,4 +1,4 @@
-package com.javasampleapproach.beanpostprocessors.bean;
+package net.honeyflower.lecturing.beanfactory.bean;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

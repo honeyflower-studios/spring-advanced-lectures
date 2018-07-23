@@ -1,4 +1,4 @@
-package com.javasampleapproach.beanpostprocessors.bean;
+package net.honeyflower.lecturing.beanfactory.bean;
 
 public class Customer {
 	private String name;

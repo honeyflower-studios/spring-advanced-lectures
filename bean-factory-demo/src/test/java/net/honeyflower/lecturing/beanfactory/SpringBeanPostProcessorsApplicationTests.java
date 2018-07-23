@@ -1,4 +1,4 @@
-package com.javasampleapproach.beanpostprocessors;
+package net.honeyflower.lecturing.beanfactory;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.javasampleapproach.beanpostprocessors.service;
+package net.honeyflower.lecturing.beanfactory.service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -6,7 +6,7 @@ import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-import com.javasampleapproach.beanpostprocessors.bean.Customer;
+import net.honeyflower.lecturing.beanfactory.bean.Customer;
 
 public class CustomerService implements InitializingBean, DisposableBean {
 

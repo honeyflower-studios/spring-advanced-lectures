@@ -1,10 +1,10 @@
-package com.javasampleapproach.beanpostprocessors;
+package net.honeyflower.lecturing.beanfactory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.javasampleapproach.beanpostprocessors.service.CustomerService;
+import net.honeyflower.lecturing.beanfactory.service.CustomerService;
 
 @SpringBootApplication
 public class SpringBeanPostProcessorsApplication {

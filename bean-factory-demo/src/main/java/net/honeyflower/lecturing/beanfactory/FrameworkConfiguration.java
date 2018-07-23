@@ -23,7 +23,7 @@ public class FrameworkConfiguration {
 		return new CommonAnnotationBeanPostProcessor();
 	}
 	
-	@Bean(initMethod="customInitBean", destroyMethod="customDestroyBean")
+	@Bean(/*initMethod="customInitBean", destroyMethod="customDestroyBean"*/)
 	@Lazy
 	public CustomerService customerService() {
 		CustomerService service = new CustomerService();

@@ -1,0 +1,1 @@
+Spring Boot with embedded H2 db with JDBC template

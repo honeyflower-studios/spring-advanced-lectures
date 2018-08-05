@@ -39,7 +39,7 @@ public class ProgrammaticSpelTest {
    public void shouldEvaluateUseOfConstructorInExpression() throws Exception {
       assertEquals(
             "Gandalf",
-            evaluateSimpleExpression("new com.habuma.spel.tests.Wizard('Gandalf').name"));
+            evaluateSimpleExpression("new net.honeyflower.lecturing.spel.Wizard('Gandalf').name"));
       assertEquals("hokus pokus",
             evaluateSimpleExpression("new String('hokus pokus')"));
    }

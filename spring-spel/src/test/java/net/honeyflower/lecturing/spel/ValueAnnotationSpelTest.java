@@ -24,13 +24,14 @@ public class ValueAnnotationSpelTest {
    @BeforeClass
    public static void setup() {
       System.setProperty("WITCH_NAME", "Glynda");
+      System.setProperty("WIZARD_NAME", "Gandalf");
    }
 
    @Test
    public void shouldWireWizardNameFromSystemEnvironment() {
       // This test requires that the environment has a variable named
       // WIZARD_NAME with a value of 'Gandalf'
-      // assertEquals("Gandalf", wizard.getName());
+      assertEquals("Gandalf", wizard.getName());
    }
 
    @Test

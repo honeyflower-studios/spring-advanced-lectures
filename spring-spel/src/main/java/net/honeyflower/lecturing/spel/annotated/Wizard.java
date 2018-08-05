@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Wizard {
-   @Value("#{systemEnvironment['WIZARD_NAME']}")
+   @Value("#{systemProperties['WIZARD_NAME']}")
    private String name;
 
    public void setName(String name) {

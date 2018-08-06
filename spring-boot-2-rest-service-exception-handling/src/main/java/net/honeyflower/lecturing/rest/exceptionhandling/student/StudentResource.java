@@ -7,9 +7,12 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +22,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 public class StudentResource {
@@ -30,8 +35,9 @@ public class StudentResource {
 	public List<Student> retrieveAllStudents() {
 		return studentRepository.findAll();
 	}
-
-	@GetMapping("/students/{id}")
+	
+	@ApiOperation("retrieves student by id")
+	@GetMapping(value="/students/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Resource<Student> retrieveStudent(@PathVariable long id) {
 		Optional<Student> student = studentRepository.findById(id);
 
@@ -53,7 +59,7 @@ public class StudentResource {
 	}
 
 	@PostMapping("/students")
-	public ResponseEntity<Object> createStudent(@RequestBody Student student) {
+	public ResponseEntity<Object> createStudent(@Valid @RequestBody Student student) {
 		Student savedStudent = studentRepository.save(student);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")

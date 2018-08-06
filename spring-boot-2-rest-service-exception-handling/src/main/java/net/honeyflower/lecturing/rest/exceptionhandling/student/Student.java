@@ -3,13 +3,28 @@ package net.honeyflower.lecturing.rest.exceptionhandling.student;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import net.honeyflower.lecturing.rest.exceptionhandling.validators.StudentValid;
 
 @Entity
+@StudentValid
 public class Student {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	
 	private String name;
+	
+	private String middleName;
+	private String familyName;
+	
+	@Email
+	private String email; 
+	
+	@NotBlank
 	private String passportNumber;
 	
 	public Student() {
@@ -22,6 +37,7 @@ public class Student {
 		this.name = name;
 		this.passportNumber = passportNumber;
 	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -40,5 +56,20 @@ public class Student {
 	public void setPassportNumber(String passportNumber) {
 		this.passportNumber = passportNumber;
 	}
-		
+
+	public String getMiddleName() {
+		return middleName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	public String getFamilyName() {
+		return familyName;
+	}
+
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
 }
